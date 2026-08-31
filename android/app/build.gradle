@@ -6,6 +6,12 @@ if (keystorePropertiesFile.exists()) {
     keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 }
 
+def signingStoreFile = keystoreProperties['storeFile'] ?: System.getenv('KOPFKLAR_SIGNING_STORE_FILE')
+def signingStorePassword = keystoreProperties['storePassword'] ?: System.getenv('KOPFKLAR_SIGNING_STORE_PASSWORD')
+def signingKeyAlias = keystoreProperties['keyAlias'] ?: System.getenv('KOPFKLAR_SIGNING_KEY_ALIAS')
+def signingKeyPassword = keystoreProperties['keyPassword'] ?: System.getenv('KOPFKLAR_SIGNING_KEY_PASSWORD')
+def hasReleaseSigning = signingStoreFile && signingStorePassword && signingKeyAlias && signingKeyPassword
+
 android {
     namespace = "de.kopfklar.app"
     compileSdk = rootProject.ext.compileSdkVersion
@@ -24,11 +30,11 @@ android {
     }
     signingConfigs {
         release {
-            if (keystorePropertiesFile.exists()) {
-                keyAlias keystoreProperties['keyAlias']
-                keyPassword keystoreProperties['keyPassword']
-                storeFile rootProject.file(keystoreProperties['storeFile'])
-                storePassword keystoreProperties['storePassword']
+            if (hasReleaseSigning) {
+                keyAlias signingKeyAlias
+                keyPassword signingKeyPassword
+                storeFile rootProject.file(signingStoreFile)
+                storePassword signingStorePassword
             }
         }
     }
@@ -37,7 +43,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            if (keystorePropertiesFile.exists()) {
+            if (hasReleaseSigning) {
                 signingConfig signingConfigs.release
             }
         }
