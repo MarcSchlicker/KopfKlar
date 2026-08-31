@@ -45,4 +45,4 @@ This repository is publicly available source code under the PolyForm Noncommerci
 
 ## Attribution
 
-Third-party software, fonts and inspiration are listed in [ATTRIBUTION.md](ATTRIBUTION.md). KopfKlar is an independent project and is not affiliated with the German Migraine and Headache Society (DMKG).
+Third-party software and font licences are listed in [ATTRIBUTION.md](ATTRIBUTION.md).

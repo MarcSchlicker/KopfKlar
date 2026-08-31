@@ -553,8 +553,6 @@ Object.assign(englishText, {
     "KopfKlar is a local, source-available project under the PolyForm Noncommercial License 1.0.0. Noncommercial use is permitted under the licence terms; commercial use needs separate permission.",
   "Quellcode, README und vollständige Lizenzhinweise ansehen":
     "View source code, README and full licence notices",
-  "Das Layout und die Auswertungsstruktur sind eigenständig umgesetzt und nur funktional von der DMKG-App inspiriert; KopfKlar ist kein offizielles DMKG-Produkt.":
-    "The layout and reporting structure are independently implemented and only functionally inspired by the DMKG app; KopfKlar is not an official DMKG product.",
   "Die Erinnerung wird direkt von Android geplant und funktioniert auch, wenn KopfKlar geschlossen ist.":
     "The reminder is scheduled directly by Android and works even when KopfKlar is closed.",
   "Im Browser kann die Erinnerung nur funktionieren, solange KopfKlar oder der Browser aktiv ist. In der Android-App wird sie zuverlässig geplant.":
@@ -5714,11 +5712,6 @@ export default function Home() {
                 >
                   Quellcode, README und vollständige Lizenzhinweise ansehen
                 </a>
-                <small>
-                  Das Layout und die Auswertungsstruktur sind eigenständig
-                  umgesetzt und nur funktional von der DMKG-App inspiriert;
-                  KopfKlar ist kein offizielles DMKG-Produkt.
-                </small>
               </section>
             </>
           )}
