@@ -1,0 +1,17 @@
+node_modules/
+dist/
+android-web/dist/
+android/.gradle/
+android/app/build/
+android/app/src/main/assets/public/
+android/build/
+android/local.properties
+android/keystore.properties
+android/*.jks
+android/*.keystore
+*.apk
+*.aab
+*.idsig
+.env*
+.DS_Store
+npm-debug.log*

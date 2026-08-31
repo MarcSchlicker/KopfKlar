@@ -1,0 +1,13 @@
+include ':app'
+include ':capacitor-cordova-android-plugins'
+project(':capacitor-cordova-android-plugins').projectDir = new File('./capacitor-cordova-android-plugins/')
+
+apply from: 'capacitor.settings.gradle'
+
+// Keep generated Capacitor artifacts outside node_modules. This avoids Windows
+// file locks while Gradle compiles the included Capacitor Android libraries.
+gradle.beforeProject { includedProject ->
+    if (includedProject.name.startsWith('capacitor-')) {
+        includedProject.buildDir = new File(settingsDir, "build/${includedProject.name}")
+    }
+}

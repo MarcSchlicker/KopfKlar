@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">KopfKlar</string>
+    <string name="title_activity_main">KopfKlar</string>
+    <string name="package_name">de.kopfklar.app</string>
+    <string name="custom_url_scheme">de.kopfklar.app</string>
+</resources>
