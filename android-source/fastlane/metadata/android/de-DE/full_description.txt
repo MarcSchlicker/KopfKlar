@@ -1,0 +1,13 @@
+KopfKlar ist ein lokales Kopfschmerztagebuch ohne Benutzerkonto und Cloud-Abgleich.
+
+• Kopfschmerzen, Schmerzstärke, Dauer und mögliche Trigger festhalten
+• Medikamente mit Wirkungseinschätzung, Schmerzstärke davor/danach und Wirkdauer erfassen
+• Kalender, Filter, Statistiken und persönliche Berichte ansehen
+• JSON-Backups sichern und wiederherstellen; CSV und PDF exportieren
+• DMKG-Tagebuch-PDFs lokal importieren
+• Optionale Erinnerungen, Zyklusangaben und App-Codesperre nutzen
+• Deutsche und englische Oberfläche, helle und dunkle Darstellung
+
+Die Tagebucheinträge bleiben auf dem Gerät. Die Codesperre schützt die Bedienoberfläche, verschlüsselt aber nicht die gespeicherten Daten. Backups enthalten persönliche Angaben. Externe Unterstützungslinks öffnen erst auf Wunsch den Browser.
+
+KopfKlar dient der Dokumentation und ersetzt keine ärztliche Diagnose oder Behandlung. Es besteht keine Verbindung zur DMKG.

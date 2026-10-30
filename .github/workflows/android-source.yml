@@ -1,0 +1,58 @@
+name: Android source snapshot
+on:
+  pull_request:
+    paths: ['android-source/**', '.github/workflows/android-source.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  android:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    defaults:
+      run:
+        working-directory: android-source
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: android-source/package-lock.json
+      - run: npm ci
+      - run: npm run lint
+      - run: npm test
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: '21'
+      - uses: android-actions/setup-android@v4
+        with:
+          log-accepted-android-sdk-licenses: false
+      - run: sdkmanager 'platforms;android-36' 'build-tools;36.0.0'
+      - run: npm run android:sync
+      - run: node scripts/check-distribution.cjs --android-web
+      - run: bash gradlew --no-daemon assembleRelease -PkopfklarUnsignedRelease=true
+        working-directory: android-source/android
+      - name: Verify unsigned release and write checksums
+        working-directory: android-source/android/app/build/outputs/apk/release
+        run: |
+          set -euo pipefail
+          test -f app-release-unsigned.apk
+          if "$ANDROID_HOME/build-tools/36.0.0/apksigner" verify app-release-unsigned.apk; then
+            echo "Expected unsigned source-build output."
+            exit 1
+          fi
+          "$ANDROID_HOME/build-tools/36.0.0/aapt" dump badging app-release-unsigned.apk > APK-METADATA.txt
+          sha256sum app-release-unsigned.apk > SHA256SUMS
+      - uses: actions/upload-artifact@v7
+        with:
+          name: KopfKlar-Unsigned-Source-Build-${{ github.sha }}
+          path: |
+            android-source/android/app/build/outputs/apk/release/app-release-unsigned.apk
+            android-source/android/app/build/outputs/apk/release/SHA256SUMS
+            android-source/android/app/build/outputs/apk/release/APK-METADATA.txt
+          if-no-files-found: error
+          retention-days: 7

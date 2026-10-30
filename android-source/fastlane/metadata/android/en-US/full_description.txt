@@ -1,0 +1,13 @@
+KopfKlar is a local headache diary without an account or cloud sync.
+
+• Record headaches, intensity, duration and possible triggers
+• Track medication effectiveness, pain before/after use and duration of relief
+• Explore the calendar, filters, statistics and personal reports
+• Export and restore JSON backups; export CSV and PDF reports
+• Import DMKG diary PDFs locally
+• Use optional reminders, cycle records and an app passcode
+• German and English interface with light and dark appearance
+
+Diary entries stay on your device. The passcode protects the interface; it does not encrypt stored data. Backups contain personal information. External support links open the browser only when requested.
+
+KopfKlar is a documentation tool and does not replace medical diagnosis or treatment. It is not affiliated with DMKG.
