@@ -1,0 +1,1 @@
+Record pain before and after medication and duration of relief. Fonts are bundled locally without Google Fonts requests. Version in preparation; device acceptance testing is still pending.

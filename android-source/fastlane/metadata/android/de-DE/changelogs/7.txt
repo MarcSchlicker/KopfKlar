@@ -1,0 +1,1 @@
+Schmerzstärke vor und nach Medikamenteneinnahme sowie Wirkdauer erfassen. Schriftarten lokal gebündelt; keine Google-Fonts-Anfrage nötig. Version in Vorbereitung, Geräteabnahme steht noch aus.

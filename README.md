@@ -1,5 +1,7 @@
 # KopfKlar
 
+Current Android source snapshot: **[1.4.2 / versionCode 7](android-source/README.md)**. Build instructions, the Noncommercial licence and source-file hashes are included in that directory. This version is prepared for testing; it is not a signed store release.
+
 KopfKlar is a local-first headache diary for Android. It helps people document headaches, medication, possible triggers, preventive therapies and optional cycle information, then view the data in a calendar, statistics and reports.
 
 ## Privacy
